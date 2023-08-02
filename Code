@@ -1,0 +1,57 @@
+
+No Tag Freeze:
+GorillaLocomotion.Player.Instance.disableMovement = false;
+
+Bat To Hand:
+GameObject.Find("Cave Bat Holdable").transform.position = GorillaLocomotion.Player.Instance.rightControllerTransform.position;
+
+Pbbv Walk:
+GorillaLocomotion.Player.Instance.disableMovement = true;
+}
+else
+{
+GorillaLocomotion.Player.Instance.disableMovement = false;
+
+Join Random:
+PhotonNetwork.JoinRandom();
+
+Disconnect:
+PhotonNetwork.Disconnect();
+
+Quit Game:
+Application.Quit(); 
+
+
+No Tap Cooldown:
+GorillaTagger.Instance.tapCoolDown = 0f;
+}
+else
+{
+   GorillaTagger.Instance.tapCoolDown = 1f;
+
+Change Board:
+           for (int i = 0; i < GorillaComputer.instance.levelScreens.Length; i++)
+{
+                Material colorr = new Material(Shader.Find("Standard"));
+                colorr.color = Color.black;
+                GameObject.Find("Level/lower level/StaticUnlit/screen").GetComponent<Renderer>().material = colorr;
+                GameObject.Find("Level/lower level/UI/CodeOfConduct").GetComponent<Text>().text = "[<color=yellow>News</color>]";
+                GameObject.Find("Level/lower level/UI/Tree Room Texts/COC Text").GetComponent<Text>().text = "LaunchHP On Top You Racist XD, Sorry Bout That";
+            }
+
+Low Gravity:
+    Physics.gravity = new Vector3(0f, -3f, 0f);
+}
+else
+{
+    Physics.gravity = new Vector3(0f, -9.81f, 0f);
+
+Ghost Arm Length:
+    GorillaLocomotion.Player.Instance.transform.localScale = new Vector3(1.19f, 1.19f, 1.19f);
+}
+else
+{
+    GorillaLocomotion.Player.Instance.transform.localScale = new Vector3(1f, 1f, 1f);
+
+Change Name [D?]
+PhotonNetwork.Nickname = "Name";
